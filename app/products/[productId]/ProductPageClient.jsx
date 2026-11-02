@@ -5,6 +5,7 @@ import { categories } from "@/Data";
 import Image from "next/image";
 import Enquiry from "@/components/Enquiry";
 import { Shield, Droplet, Dumbbell, Recycle } from "lucide-react";
+import { handleWhatsappClick } from "@/lib/track";
 
 export default function ProductPage({ params }) {
   const { productId } = React.use(params);
@@ -16,9 +17,9 @@ export default function ProductPage({ params }) {
   const [activeImage, setActiveImage] = useState(
     product?.image?.[0]
       ? {
-          ...product.image[0],
-          isVideo: false,
-        }
+        ...product.image[0],
+        isVideo: false,
+      }
       : null,
   );
   const [isZoomed, setIsZoomed] = useState(false);
@@ -135,11 +136,10 @@ export default function ProductPage({ params }) {
                   <button
                     key={i}
                     onClick={() => setActiveImage(img)}
-                    className={`w-20 h-20 rounded-xl overflow-hidden border transition ${
-                      activeImage?.src === img.src
-                        ? "border-red-500 scale-105 shadow-md"
-                        : "border-gray-200 hover:scale-105"
-                    }`}
+                    className={`w-20 h-20 rounded-xl overflow-hidden border transition ${activeImage?.src === img.src
+                      ? "border-red-500 scale-105 shadow-md"
+                      : "border-gray-200 hover:scale-105"
+                      }`}
                   >
                     <Image
                       src={img.src}
@@ -158,9 +158,8 @@ export default function ProductPage({ params }) {
 
                       // convert to embed format
                       if (videoSrc.includes("youtu.be/")) {
-                        videoSrc = `https://www.youtube.com/embed/${
-                          videoSrc.split("youtu.be/")[1].split("?")[0]
-                        }`;
+                        videoSrc = `https://www.youtube.com/embed/${videoSrc.split("youtu.be/")[1].split("?")[0]
+                          }`;
                       } else if (videoSrc.includes("watch?v=")) {
                         videoSrc = videoSrc
                           .replace("watch?v=", "embed/")
@@ -173,11 +172,10 @@ export default function ProductPage({ params }) {
                         isVideo: true,
                       });
                     }}
-                    className={`relative w-20 h-20 rounded-xl overflow-hidden border ${
-                      activeImage?.isVideo
-                        ? "border-red-500 scale-105"
-                        : "border-gray-200"
-                    }`}
+                    className={`relative w-20 h-20 rounded-xl overflow-hidden border ${activeImage?.isVideo
+                      ? "border-red-500 scale-105"
+                      : "border-gray-200"
+                      }`}
                   >
                     {/* YouTube Thumbnail */}
                     {videoId && (
@@ -235,18 +233,18 @@ export default function ProductPage({ params }) {
             </div>
 
             <div className="py-4 ml-2 mb-2">
-  {product.price && (
-    <div className="inline-flex items-center gap-3">
-      <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-        Price
-      </span>
+              {product.price && (
+                <div className="inline-flex items-center gap-3">
+                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    Price
+                  </span>
 
-      <span className="text-2xl sm:text-3xl font-bold text-black tracking-tight">
-        {product.price}
-      </span>
-    </div>
-  )}
-</div>
+                  <span className="text-2xl sm:text-3xl font-bold text-black tracking-tight">
+                    {product.price}
+                  </span>
+                </div>
+              )}
+            </div>
 
             {/* ================= CTA ================= */}
             <div className="flex flex-col sm:flex-row gap-4">
@@ -256,7 +254,7 @@ export default function ProductPage({ params }) {
               >
                 Request Quote
               </button>
-              <a
+              <a onClick={() => handleWhatsappClick({ source: "Website", obj: product.name || "N/A" })}
                 href={`https://wa.me/919999926558?text=Hello I am interested in ${product.name}`}
                 target="_blank"
                 className="flex-1 py-4 text-center rounded-xl border border-green-500 text-green-600 hover:bg-green-500 hover:text-white transition font-semibold"

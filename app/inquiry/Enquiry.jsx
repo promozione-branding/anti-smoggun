@@ -20,7 +20,7 @@ const Enquiry = () => {
       <ContactForm />
       <CategoryProducts />
       <ContactForm2 />
-      <Cta/>
+      <Cta />
       <KeyFeature />
       <WhyChooseUs />
       <Counter />

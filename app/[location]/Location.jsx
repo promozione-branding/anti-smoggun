@@ -26,6 +26,7 @@ import {
   Mail,
 } from "lucide-react";
 import EnquiryForm from "@/components/Enquiry";
+import { handleCallClick } from "@/lib/track";
 
 const Location = () => {
   const params = useParams();
@@ -156,7 +157,7 @@ const Location = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a
+                <a onClick={() => handleCallClick({ source: "Website", obj: "N/A" })}
                   href="tel:+919999926558"
                   className="w-full sm:w-auto flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-red-900/20"
                 >

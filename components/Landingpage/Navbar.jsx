@@ -22,6 +22,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import EnquiryForm from "../Enquiry";
 import { usePathname } from "next/navigation";
+import { handleWhatsappClick } from "@/lib/track";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -67,9 +68,8 @@ export default function Navbar() {
     <header className="w-full fixed top-0 left-0 z-50 font-semibold">
       {/* ===== TOP BAR (SLIM + CLEAN) ===== */}
       <div
-        className={`bg-[#c8102e]/95 backdrop-blur-md text-white transition-all duration-500 hidden lg:flex lg:items-center  overflow-hidden ${
-          showTopBar ? "h-[50px]" : "h-0"
-        }`}
+        className={`bg-[#c8102e]/95 backdrop-blur-md text-white transition-all duration-500 hidden lg:flex lg:items-center  overflow-hidden ${showTopBar ? "h-[50px]" : "h-0"
+          }`}
       >
         <div className="w-full max-w-[1400px] mx-auto flex items-center h-[55px] px-6 text-[16px]">
           {/* LEFT INFO */}
@@ -138,7 +138,7 @@ export default function Navbar() {
           </Link>
 
           {hideLayout && (
-            <a
+            <a onClick={() => handleWhatsappClick({ source: "Website", obj: "N/A" })}
               href="https://wa.me/919999926558"
               target="_blank"
               className="flex mr-10 items-center gap-2 text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full transition text-md lg:hidden"
@@ -187,9 +187,9 @@ export default function Navbar() {
                 </span>
                 {showCategoryOnPhone && (
                   <div className="flex flex-col gap-1 duration-200">
-                    {categories.map((item,index) => (
+                    {categories.map((item, index) => (
                       <Link
-                      key={index}
+                        key={index}
                         href={`/categories/${item.id}`}
                         onClick={() => setPhoneNavbar(false)}
                         className="text-black flex items-center gap-2"
@@ -223,7 +223,7 @@ export default function Navbar() {
                 >
                   Request a Quote
                 </Link>
-                <a
+                <a onClick={() => handleWhatsappClick({ source: "Website", obj: "N/A" })}
                   href="https://wa.me/918882057687"
                   target="_blank"
                   className="flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-lg font-bold"
@@ -265,20 +265,18 @@ export default function Navbar() {
                 OUR PRODUCTS
                 <ChevronDown
                   size={15}
-                  className={`transition-transform duration-300 ${
-                    isMenuOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-300 ${isMenuOpen ? "rotate-180" : ""
+                    }`}
                 />
               </Link>
 
               {/* ===== MEGA MENU ===== */}
               <div
                 onMouseLeave={() => setIsMenuOpen(false)}
-                className={`absolute left-1/2 -translate-x-1/2 top-[120%] w-[900px] bg-white shadow-2xl rounded-xl transition-all duration-300 z-50 ${
-                  isMenuOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible translate-y-4"
-                }`}
+                className={`absolute left-1/2 -translate-x-1/2 top-[120%] w-[900px] bg-white shadow-2xl rounded-xl transition-all duration-300 z-50 ${isMenuOpen
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible translate-y-4"
+                  }`}
               >
                 <div className="grid grid-cols-4 gap-6 p-6">
                   {categories.map((cat, i) => (
@@ -342,7 +340,7 @@ export default function Navbar() {
             </button>
 
             {/* WHATSAPP BUTTON */}
-            <a
+            <a onClick={() => handleWhatsappClick({ source: "Website", obj: "N/A" })}
               href="https://wa.me/919999926558"
               target="_blank"
               className="flex items-center gap-2 text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full transition text-md"

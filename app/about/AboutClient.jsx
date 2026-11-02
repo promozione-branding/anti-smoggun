@@ -57,7 +57,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-gray-700 leading-relaxed mb-8 text-[18px]">
-           Kapmix Machinery Pvt. Ltd. is a leading manufacturer and supplier of high-performance construction machinery Anti Smog Gun and dust suppression equipment in India. Established around 2012, the company is headquartered in Noida, Uttar Pradesh, and has built a strong reputation in the construction and industrial equipment sector. 
+              Kapmix Machinery Pvt. Ltd. is a leading manufacturer and supplier of high-performance construction machinery Anti Smog Gun and dust suppression equipment in India. Established around 2012, the company is headquartered in Noida, Uttar Pradesh, and has built a strong reputation in the construction and industrial equipment sector.
             </p>
 
             {/* CARD */}
@@ -68,7 +68,7 @@ export default function AboutPage() {
               </h3>
 
               <p className="text-gray-700 text-md leading-relaxed">
-               Kapmix Machinery is a private limited company engaged in manufacturing, exporting, importing, and supplying a wide range of construction and industrial machinery. With a dedicated team of skilled engineers and professionals, the company focuses on delivering reliable, durable, and cost-effective equipment solutions. 
+                Kapmix Machinery is a private limited company engaged in manufacturing, exporting, importing, and supplying a wide range of construction and industrial machinery. With a dedicated team of skilled engineers and professionals, the company focuses on delivering reliable, durable, and cost-effective equipment solutions.
 
               </p>
 
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 "/cat2_2.avif",
                 "/cta.webp",
                 "/cat4_4.avif",
-               
+
               ].map((img, i) => (
                 <SwiperSlide key={i}>
                   <div className="relative w-full h-[370px] md:h-[500px]">
@@ -113,7 +113,7 @@ export default function AboutPage() {
 
       </section>
 
-<Categories></Categories>
+      <Categories></Categories>
 
       {/* ================= VISION ================= */}
       <section className="w-full bg-[#fafafa] py-10 px-6 md:px-16 relative overflow-hidden">
@@ -132,7 +132,7 @@ export default function AboutPage() {
           </h2>
 
           <p className="text-gray-700 leading-relaxed text-xl max-w-3xl mx-auto">
-           At Kapmix Machinery Pvt. Ltd., our vision is to set new benchmarks in the construction machinery sector by being the most trusted Anti Smog Gun supplier in India. To become a trusted global brand by delivering innovative, durable, and efficient machinery solutions that perform even in the toughest working conditions. 
+            At Kapmix Machinery Pvt. Ltd., our vision is to set new benchmarks in the construction machinery sector by being the most trusted Anti Smog Gun supplier in India. To become a trusted global brand by delivering innovative, durable, and efficient machinery solutions that perform even in the toughest working conditions.
           </p>
 
         </div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-white max-w-3xl mx-auto leading-relaxed mb-8 text-lg">
-              Partner with <span className="text-red-400 font-medium">Kapmix Machinery Pvt. Ltd.</span>, 
+              Partner with <span className="text-red-400 font-medium">Kapmix Machinery Pvt. Ltd.</span>,
               a trusted Anti Smog Gun manufacturer delivering reliable dust suppression solutions across India.
             </p>
 
@@ -178,7 +178,7 @@ export default function AboutPage() {
               </Link>
 
               <a
-                href={"/productprprs"}
+                href={"/products"}
                 className="px-8 py-4 border border-white/30 hover:border-red-400 hover:text-red-400 transition rounded-full font-medium"
               >
                 Explore Products
